@@ -54,6 +54,48 @@
 				});
 				</script>
 			</div>
+
+			<div class="demo">
+				<h2>Digestion of many children</h2>
+
+				<button type="button" class="activate"
+					id="select-children-load">Load</button>
+				<button type="button" class="activate"
+					id="select-children-activate">Selectize</button>
+
+				<div class="control-group">
+					<select id="select-children"></select>
+				</div>
+
+				<script>
+					// <select id="select-children"></select>
+					var letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV';
+					var children = [];
+
+					$('#select-children-load').click(function(){
+						for (var i = 0; i < 12000; i++) {
+							var title = [];
+
+							for (var j = 0; j < 8; j++) {
+								title.push(letters.charAt(Math.round((letters.length - 1) * Math.random())));
+							}
+
+							title = title.join('');
+
+							var node = $('<option>', {text: title, value: title});
+							children.push(node);
+						}
+
+						$('#select-children').append(children);
+					});
+
+					$('#select-children-activate').click(function(){
+						$('#select-children').selectize({
+							maxItems: null,
+							create: true
+						});
+					});
+				</script>
 		</div>
 	</body>
 </html>
