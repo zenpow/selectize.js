@@ -39,7 +39,7 @@
   "dependencies": {
     "jquery": ">=1.7.0",
     "microplugin": "0.0.x",
-    "sifter": "0.5.x"
+    "sifter": "0.6.x"
   },
   "devDependencies": {
     "bootstrap2": "bootstrap#2",
